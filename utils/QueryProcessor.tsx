@@ -40,6 +40,15 @@ export default function QueryProcessor(query: string): string {
   if (query.toLowerCase().includes("which of the following numbers is the largest")) {
     return findLargestNumberInQuery(query) ;
   }
+
+  const addMatch = query.toLowerCase().match(/what is (\d+) plus (\d+)/);
+  if (addMatch) {
+    const x: number = parseInt(addMatch[1]);
+    const y: number = parseInt(addMatch[2]);
+    return (x+y).toString();
+  }
+
+
   
  
   
