@@ -11,6 +11,11 @@ export default function QueryProcessor(query: string): string {
       "asatpute"
     );
   }
+  if (query.toLowerCase().includes("What is your name")) {
+    return (
+      "anushka"
+    );
+  }
 
   return "";
 }
