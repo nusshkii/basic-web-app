@@ -16,54 +16,37 @@ export default function QueryProcessor(query: string): string {
       "anushka"
     );
   }
+  
 
+  function findLargestNumberInQuery(query: string): string {
+    // Use a regular expression to extract numbers from the query
+    const numberMatches = query.match(/\d+/g);
+  
+    // Check if numbers were found in the query
+    if (!numberMatches || numberMatches.length === 0) {
+      return "No numbers found in the query.";
+    }
+  
+    // Convert the matched strings to numbers
+    const numbers = numberMatches.map(Number);
+  
+    // Find the largest number
+    const largestNumber = Math.max(...numbers);
+  
+    // Convert the largest number to a string
+    return largestNumber.toString();
+  }
+  
   if (query.toLowerCase().includes("which of the following numbers is the largest")) {
-    return (
-      "99"
-    );
+    return findLargestNumberInQuery(query) ;
   }
-
-  if (query.toLowerCase().includes("10 plus 35")) {
-    return (
-      "45"
-    );
-  }
-
-  if (query.toLowerCase().includes("11 plus 24")) {
-    return (
-      "35"
-    );
-  }
-
-  if (query.toLowerCase().includes("71 plus 8")) {
-    return (
-      "79"
-    );
-  }
-
-  if (query.toLowerCase().includes("46 plus 16")) {
-    return (
-      "62"
-    );
-  }
-
-  if (query.toLowerCase().includes("28 plus 99")) {
-    return (
-      "127"
-    );
-  }
-
-  if (query.toLowerCase().includes("45 plus 11")) {
-    return (
-      "56"
-    );
-  }
-
-  if (query.toLowerCase().includes("9 plus 44")) {
-    return (
-      "53"
-    );
-  }
+  
+ 
+  
+ 
+  
+  
+  
 
   return "";
 }
